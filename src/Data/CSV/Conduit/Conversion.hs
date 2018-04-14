@@ -778,11 +778,11 @@ instance MonadPlus Parser where
                                    in unParser a kf' ks
     {-# INLINE mplus #-}
 
-instance Monoid.Monoid (Parser a) where
-    mempty  = fail "mempty"
-    {-# INLINE mempty #-}
-    mappend = mplus
-    {-# INLINE mappend #-}
+-- instance Monoid.Monoid (Parser a) where
+--    mempty  = fail "mempty"
+--    {-# INLINE mempty #-}
+--    mappend = mplus
+--    {-# INLINE mappend #-}
 
 apP :: Parser (a -> b) -> Parser a -> Parser b
 apP d e = do
